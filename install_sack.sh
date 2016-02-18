@@ -13,7 +13,7 @@
 
 # sack installation variables
 sack__install_main=$HOME/bin
-sack__install_sackrc=$HOME
+sack__install_sackrc=$HOME/.config/sack/
 sack__install_cwd=$(pwd)
 
 # If the install directory doesn't exist, create it
