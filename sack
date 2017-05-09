@@ -488,7 +488,7 @@ sack__default_tool=ack
 # Color parameter is different for ack / ag than for grep:
 sack__color_param='--color'
 
-echo "sack__option is: $sack__option"
+#echo "sack__option is: $sack__option"
 
 # Determine which search tool to use
 if [[ "$sack__option" == "-ag" ]]; then
@@ -562,24 +562,21 @@ else
 fi
 
 # Announce start of sack:
-echo ""
-echo "============> running $sack__default_tool! <============"
+#echo ""
+#echo "============> running $sack__default_tool! <============"
 # Note that this is different from print_current_profile_info()
-echo ""
-echo "===> Current Profile: $sack__profile_name"
-echo "===> Using flags: $sack__flags"
-echo "===> Searching under: $sack__cwd"
-echo "===> Searching parameters: $@"
-echo ""
+#echo ""
+#echo "===> Current Profile: $sack__profile_name"
+#echo "===> Using flags: $sack__flags"
+#echo "===> Searching under: $sack__cwd"
+#echo "===> Searching parameters: $@"
+#echo ""
 
 # The actual wrapper around ack
 $sack__default_tool $sack__color_param $sack__flags "$@" "$sack__cwd" | tee >$sack__dev_null >(display_shortcuts) >(process_shorcut_paths | remove_escaped_chars > $sack__shortcut_file)
 
 # Show usage instructions for first-time users; this can be turned off
-if [[ $sack__show_instructions -eq 0 ]]; then
-    # do nothing
-    echo ""
-else
+if [[ $sack__show_instructions -eq 1 ]]; then
     echo ""
     echo "===== Use: \"$sack__shortcut_cmd #\" to go directly to the search result!"
     echo "===== Example: ( user@linux:~$ $sack__shortcut_cmd 25 )"
