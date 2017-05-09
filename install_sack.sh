@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 # @filename: install_sack.sh
-# 
+#
 # @author Sampson L. Chen (sampson-chen / slchen)
 # @date 2012-10-14
 #
 # @description:
 # Sack auto-install script
-# 
+#
 # @usage:
 # run this script from where the git repo is cloned to.
 
