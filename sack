@@ -474,7 +474,7 @@ listprofiles() {
 # =============================================
 
 # Where to find the config file
-sack__config_path=$HOME/.config/sack/.sackrc
+sack__config_path=$HOME/.config/sack/sackrc
 
 # Initializing the variable for checking different file names
 sack__file_name="                                              "
