@@ -133,7 +133,7 @@ process_shorcut_paths() {
 # Remove the escaped characters that get piped from ack in order to preserve
 # colored output to stdout
 remove_escaped_chars() {
-    sed -r "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
+    gsed -r "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
 }
 
 # Create the actual shortcut command to be used across terminals / shell sessions
