@@ -133,17 +133,7 @@ process_shorcut_paths() {
 # Remove the escaped characters that get piped from ack in order to preserve
 # colored output to stdout
 remove_escaped_chars() {
-    # Need to do a check for the OS, because Linux uses a different sed
-    # than OS X
-
-    # Linux / Cygwin
-    if [[ $sack__OS == "Linux" ]] || [[ $sack__OS == "$CYGWIN_NT"* ]]; then
-        sed -r "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
-    # OS X
-    elif [[ $sack__OS == "Darwin" ]]; then
-        sed -E "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
-    fi
-    # @todo: implement support for other OSes at a later date
+    sed -r "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
 }
 
 # Create the actual shortcut command to be used across terminals / shell sessions
